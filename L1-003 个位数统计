@@ -1,0 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+int main()
+{
+	char a[1001];
+	int b[10] = { 0 };
+	int i = 0, t;
+  printf("请输入要计算的数值");
+	scanf("%s",a);
+	while (a[i] != '\0')
+	{
+		t = a[i] - '0';                          //利用ASCII值的差来代表
+		b[t]++;
+		i++;
+	}
+	for (i = 0; i <= 9; i++)
+	{
+		if (b[i] > 0)
+			printf("%d:%d个\n", i, b[i]);
+	}
+	return 0;
+}
