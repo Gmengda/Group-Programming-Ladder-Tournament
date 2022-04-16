@@ -1,0 +1,36 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+int main()
+{
+	int i = 0, m, n = 0, x, a[10];
+	printf("请输入一个整数");
+	scanf("%d", &m);
+	if (m == 0)printf("ling");
+	if (m < 0)
+	{
+		printf("fu ");
+		m = -m;
+	}
+	while (m > 0)
+	{
+		a[n] = m % 10;
+		m /= 10;
+		n++;
+	}
+	for (x = n - 1; x >= 0; x--)
+	{
+
+		if (x[a] == 0) printf("ling ");
+		else if (x[a] == 1) printf("yi ");
+		else if (x[a] == 2) printf("er ");
+		else if (x[a] == 3) printf("'san "); 
+		else if (x[a] == 4) printf("si ");
+		else if (x[a] == 5) printf("wu ");
+		else if(x[a]==6) printf("liu ");
+		else if(x[a]==8) printf("ba ");
+		else if(x[a]==9) printf("jiu ");
+	}
+	printf("\n");
+	return 0;
+}
