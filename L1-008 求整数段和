@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+int main()
+{
+	int a, b, i, c=0;
+	while (1)
+	{
+		printf("请输入两个数");
+		scanf("%d%d", &a, &b);
+		if (a >= -100 && b <= 100)
+		{
+			break;
+		}
+		else
+		{
+			printf("请从新输入");
+		}
+	}
+	if (a < 0)
+	{
+		a = -a;
+	}
+	for (i = a+1; i <= b; i++)
+	{
+		c=i+c;
+	}
+	printf("%d", c);
+	return 0;
+}
