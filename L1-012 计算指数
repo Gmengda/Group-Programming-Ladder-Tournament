@@ -1,0 +1,15 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main()
+{
+	int b,c=1;
+	scanf("%d", &b);
+	while (b)
+	{
+		c = c * 2;
+		b--;
+	}
+	printf("%d", c);
+	return 0;
+}
