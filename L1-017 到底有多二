@@ -1,0 +1,28 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main()
+{
+	int j;
+	double q, n = 0, i;
+	char m[40];
+	printf("请输入整数");
+	scanf("%s", &m);
+	i = strlen(m);
+	for (j = 0; j <= i; j++)
+	{
+		if (m[j] == '2')
+			n++;
+	}
+	q = n / (i-1);
+	if (m[0] == '-')
+		q = q * 1.5;
+	if (m[j-1]%2 == 2)
+	{
+		q = q * 2;
+	}
+	printf("%.2lf%", q);
+	return 0;
+}
