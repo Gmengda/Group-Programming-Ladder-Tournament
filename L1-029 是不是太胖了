@@ -1,0 +1,12 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+
+int main()
+{
+	double m;
+	scanf("%lf", &m);
+	printf("%lf", (m - 100)*0.9 * 2);
+	return 0;
+}
