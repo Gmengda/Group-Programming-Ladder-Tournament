@@ -1,0 +1,48 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+
+int main()
+{
+	int a=0, b=0, c=0, d=0;
+	int i, j;
+	char m[100];
+	scanf("%s", &m);
+	i = strlen(m);
+	for (i = i; i > 0; i--)
+	{
+		if (m[i] == 'G'||m[i] == 'g')
+			a++;
+		if (m[i] == 'P'||m[i] == 'p')
+			b++;
+		if (m[i] == 'L'||m[i] == 'l')
+			c++;
+		if (m[i] == 'T'||m[i] == 't')
+			d++;
+	}
+	while (a + b + c + d)
+	{
+		if (a != 0)
+		{
+			printf("G");
+			a--;
+		}
+		if (b != 0)
+		{
+			printf("P");
+			b--;
+		}
+		if (c != 0)
+		{
+			printf("L");
+			c--;
+		}
+		if (d != 0)
+		{
+			printf("T");
+			d--;
+		}
+	}
+	return 0;
+}       
