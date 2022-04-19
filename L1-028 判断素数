@@ -1,0 +1,40 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+
+int main()
+{
+	char a[10] = { 0 };
+	int n,m;
+	int i, j, k=0, x;
+	scanf("%d", &n);
+	for (i = 0; i < n; i++)
+	{
+		scanf("%d", &x);
+		for (j = 2; j < x; j++)
+		{
+			if (x%j == 0)
+			{
+				m = 0;
+				break;
+			}
+			else
+				m = 1;
+		}
+		if (m == 1)
+			a[k] = '1';
+		else
+			a[k] = '0';
+		k++;
+	}
+	m = strlen(a);
+	for (i = 0; i < k; i++)
+	{
+		if (a[i] == '1')
+			printf("YES\n");
+		else
+			printf("NO\n");
+	}
+	return 0;
+}
