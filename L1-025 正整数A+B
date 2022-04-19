@@ -1,0 +1,65 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+
+int main()
+{
+	int i, j, k;
+	char s[10] = { 0 };
+	char m[10],n[10];
+	scanf("%s%s", &m,&n);
+	i = strlen(m);
+	j = strlen(n);
+	while(i)
+	{
+		if (m[i-1] > '9' || m[i-1] < '0')
+		{
+			m[0] = '?';
+			m[1] = '\0';
+		}
+		i--;
+	}
+	while (j)
+	{
+		if (n[j-1] > '9' || n[j-1] < '0')
+		{
+			n[0] = '?';
+			n[1] = '\0';
+		}
+		j--;
+	}
+	i = strlen(m);
+	j = strlen(n);
+	if (m[0] != '?'&&n[0] != '?')
+	{
+		if(i>=j)
+			for (j = j; j >= 0; j--)
+			{
+				s[i-1] = m[i-1] + n[j-1] - 48;
+				if ((m[i - 1] + n[j - 1] - 48) >= 10)
+				{
+					s[i - 1] = s[i - 1] - 10;
+					m[i - 2] = m[i - 1] + 1;
+				}
+				i--;
+			}
+		if (i < j)
+			for (i = i; i >= 0; i--)
+			{
+				s[i-1] = m[i-1] + n[j-1] - 48;
+				if ((m[i - 1] + n[j - 1] - 48) >= 10)
+				{
+					s[j - 1] = s[j - 1] - 10;
+					m[j - 2] = n[j - 1] + 1;
+				}
+				j--;
+			}
+		printf("%s + %s = %s", m, n, s);
+	}
+	else
+	{
+		printf("%s + %s = ? ", m, n);
+	}
+	return 0;
+}
