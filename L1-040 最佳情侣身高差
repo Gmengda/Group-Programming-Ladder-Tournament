@@ -1,0 +1,17 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+
+int main()
+{
+	char m;
+	double i, j;
+	scanf("%c", &m);
+	scanf("%lf", &i);
+	if(m=='M')
+	    printf("%.2lf", i*1.09);
+	if(m=='F')
+		printf("%.2lf", i/1.09);
+	return 0;
+}
