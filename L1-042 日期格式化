@@ -7,6 +7,6 @@ int main()
 {
 	int y, m, d;
 	scanf("%d-%d-%d", &m, &d, &y);
-	printf("%d-%.2d-%d", y, m, d);
+	printf("%d-%.2d-%.2d", y, m, d);
 	return 0;
 }
