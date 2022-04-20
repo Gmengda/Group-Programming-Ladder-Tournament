@@ -1,0 +1,33 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+
+int main()
+{
+	char m[20] = { 0 };
+	int n, s;
+	int i = 0;
+	scanf("%d", &n);
+	scanf("%[^\n]", &m);
+	s = strlen(m);
+	if (n > s)
+	{
+		while (n - s)
+		{
+			printf("*");
+			n--;
+		}
+	}
+	else
+	{
+		while (n)
+		{
+			m[i] = m[s - n];
+			n--;
+			i++;
+		}
+	}
+	printf("%s", &m);
+	return 0;
+}
