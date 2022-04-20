@@ -1,0 +1,19 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+
+int main()
+{
+	double i = 0,j = 0;
+	scanf("%lf%lf", &i, &j);
+	if (j == 0)
+	{
+		printf("%.0lf/%.0lf = error", i, j);
+	}
+	else
+	{
+		printf("%.0lf/%.0lf = %.2lf", i, j, i / j);
+	}
+	return 0;
+}
