@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+
+int main()
+{
+	int n;
+	int h, w, v;
+	scanf("%d",&n);
+	while (n--)
+	{
+		scanf("%d%d", &h, &w);
+		v = (h - 100)*0.9 * 2;
+		if (w >= (v*(1.1)))
+		{
+			printf("You are tai pang le!\n");
+		}
+		else if (w <= (v*(0.9)))
+		{
+			printf("You are tai shou le!\n");
+		}
+		else
+		{
+			printf("You are wan mei!\n");
+		}
+	}
+	return 0;
+}
