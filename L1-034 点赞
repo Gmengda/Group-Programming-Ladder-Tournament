@@ -1,0 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+
+int main()
+{
+	int n, z;
+	int i = 0, j, q;
+	int m[1000] = { 0 };
+	scanf("%d", &n);
+	while (n != 0)
+	{
+		scanf("%d", &z);
+		for (j = 0; j < z; j++)
+		{
+			scanf("%d", &i);
+			m[i]++;
+		}
+		n--;
+	}
+	for (q = 0; q < 1000; q++)
+	{
+		if (m[n] <= m[q + 1])
+		{
+			n = q;
+		}
+	}
+	printf("%d %d", n, m[n]);
+	return 0;
+}
