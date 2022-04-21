@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+
+int main() 
+{
+	int i;
+	char m[7] = "aaaaaa";
+	int c, s, x;
+	scanf("%d %d", &c, &s);
+	m[c] = 0;
+	for (i = 0; i < c; i++)
+	{
+		x = s % 26;
+		s = s / 26;
+		m[i] = m[i] + 25 - x;
+		if (i == 0)
+			m[i] = m[i] + 1;
+	}
+	for (i = c; i >= 0; i--)
+	{
+		printf("%c", m[i]);
+	}
+	return 0;
+}
