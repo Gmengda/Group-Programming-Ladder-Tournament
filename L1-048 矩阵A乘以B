@@ -1,0 +1,43 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+
+int main() 
+{
+	int m[10][10] = { 0 }, n[10][10] = { 0 };
+	int s, z;
+	int i, j, o, p;
+	scanf("%d %d", &o, &p);
+	for (s = 0; s < o; s++)
+	{
+		for (z = 0; z < p; z++)
+		{
+			scanf("%d ", &m[s][z]);
+		}
+	}
+	scanf("%d %d", &i, &j);
+	for (s = 0; s < i; s++)
+	{
+		for (z = 0; z < j; z++)
+		{
+			scanf("%d ", &n[s][z]);
+		}
+	}
+	if (p != i)
+	{
+		printf("rror: Ca != Rb");
+	}
+	else 
+	{
+		for (s = 0; s < o; s++)
+		{
+			for (z = 0; z < j; z++)
+			{
+				printf("%d ", m[s][1] * n[1][z] + m[s][2] * n[2][z] + m[s][3] * n[3][z]);
+			}
+			printf("\n");
+		}
+	}
+	return 0;
+}
