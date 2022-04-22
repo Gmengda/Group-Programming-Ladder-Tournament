@@ -1,0 +1,43 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int n, count = 0, count_1 = 0, count_2 = 0;  //count表示ong出现的次数，count_1表示一句诗中空格的个数，count_2代表排查的时候的空格数
+	char str[110];   //尽量把字符串设计的大一点
+	scanf("%d", &n);
+	getchar();     //天梯赛PTA的bug，在输入的n后面会有一个空格，用getchar()吸收
+	for (int i = 0; i < n; i++)
+	{
+		gets(str);
+		count = 0, count_1 = 0;    //每一次循环将count和count_1重新设置为0，避免影响下一句
+		for (int j = 0; j < strlen(str); j++)
+		{
+			if (str[j] == ','&&str[j - 1] == 'g'&&str[j - 2] == 'n'&&str[j - 3] == 'o')
+				count++;
+			if (str[j] == '.'&&str[j - 1] == 'g'&&str[j - 2] == 'n'&&str[j - 3] == 'o')
+				count++;                          //这两个判断很简单，看一个就明白了
+			if (str[j] == ' ')       //计算这一句古诗中空格的个数
+				count_1++;
+		}
+		if (count == 2)       //判断出应该改的诗句
+		{
+			count_2 = 0;      //开头重新定义，防止影响下一次
+			for (int i = 0; i < strlen(str); i++)     //为了方便判断，单个字符输出
+			{
+				if (str[i] == ' ')     //排查空格个数
+					count_2++;
+				if (count_2 == count_1 - 2)    //当要输出到倒数第三个空格的时候，后面不输出了，直接输出敲笨钟，跳出循环
+				{
+					printf(" qiao ben zhong.\n");
+					break;
+				}
+				else
+					printf("%c", str[i]);     //倒数第三个空格之前都属按照原样输出
+			}
+		}
+		else
+			printf("Skipped\n");  //不用改的直接输出Skipped
+	}
+	return 0;
+}
