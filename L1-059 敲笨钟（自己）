@@ -1,0 +1,45 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+	int q, s, z = 0;
+	int i = 0, n, j = 0, p;
+	char m[100];
+	scanf("%d ", &n);
+
+	for (i = 0; i < n; i++)
+	{
+		//scanf("%s", m);
+		gets(m);
+		q = strlen(m);
+
+		for (p = 0; p < q; p++)
+			if (m[p] == ',')
+			{
+				break;
+			}
+
+		if (m[p - 1] == 'g'&&m[q - 2] == 'g'&&m[p - 2] == 'n'&& m[q - 3] == 'n'&&m[p - 3] == 'o'&& m[q - 4] == 'o')
+		{
+			for (s = q; s > 0; s--)
+			{
+				if (m[s] == ' ')
+					z++;
+				if (z == 3)
+					break;
+			}
+			m[s] = '\0';
+			printf("%s", m);
+			printf(" qiao ben zhong\n");
+		}
+		else
+		{
+			printf("Skipped\n");
+		}
+	}
+	system("pause");
+	return 0;
+}
