@@ -1,0 +1,12 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+
+int main() 
+{
+	int x, y;
+	scanf("%d %d", &x, &y);
+	printf("%d", 5000 - 50 * (100 - x) - 50 * y);
+	return 0;
+}
