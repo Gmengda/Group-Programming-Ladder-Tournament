@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string>
+
+int main()
+{
+	int n;
+	int a, b;
+	char m[7] = { 0 };
+	scanf("%d", &n);
+	for (n = n; n > 0; n--)
+	{
+		scanf("%s", m);
+		a = m[0] + m[1] + m[2];
+		b = m[3] + m[4] + m[5];
+		if (a == b)
+			printf("你是幸运的\n");
+		else
+			printf("运气不是太好\n");
+	}
+	return 0;
+}
