@@ -1,0 +1,17 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string>
+
+int main()
+{
+	int n, l;
+	double m, s = 0;
+	scanf("%d", &n);
+	for (l = 0; l < n; l++)
+	{
+		scanf("%lf", &m);
+		s += 1 / m;
+	}
+	printf("%lf", s / n);
+	return 0;
+}
