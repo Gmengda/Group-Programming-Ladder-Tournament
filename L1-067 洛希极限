@@ -1,0 +1,28 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string>
+
+int main()
+{
+	int n;
+	float p, bz1, bz2, k;
+	scanf("%f %d %f", &p, &n, &bz1);
+	if (n == 0)
+	{
+		bz2 = p * 2.455;
+	}
+	if (n == 1)
+	{
+		bz2 = p * 1.26;
+	}
+	k = 1.0*bz1 / bz2;
+	if (k > 1) 
+	{
+		printf("%.2f ^_^", bz2);
+	}
+	else 
+	{
+		printf("%.2f T_T", bz2);
+	}
+	return 0;
+}
