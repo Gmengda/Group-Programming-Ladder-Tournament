@@ -1,0 +1,32 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string>
+
+int main()
+{
+	int n, m, h;
+	scanf("%d %d %d", &n, &h, &m);
+	if (n = 1)
+	{
+		if (h < 130)
+			printf("多吃鱼");
+		else
+			printf("你厉害");
+		if (m > 27)
+			printf("少吃肉");
+		else
+			printf("多吃肉");
+	}
+	else
+	{
+		if (h < 129)
+			printf("多吃鱼");
+		else
+			printf("你厉害");
+		if (m > 25)
+			printf("少吃肉");
+		else
+			printf("多吃肉");
+	}
+	return 0;
+}
