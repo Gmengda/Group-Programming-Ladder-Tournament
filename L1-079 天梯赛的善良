@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+
+int main()
+{
+	int i, n;
+	int a[25] = { 0 };
+	int m = 0, z = 0;
+	scanf("%d", &n);
+	for (i = 0; i < n; i++)
+		scanf("%d ", &a[i]);
+	for (i = 0; i < n; i++)
+		if (a[i] > m)
+			m = a[i];
+	for (i = 0; i < n; i++)
+		if (a[i] == m)
+			z++;
+	printf("%d %d\n", m, z);
+	z = 0;
+	for (i = 0; i < n; i++)
+		if (a[i] < m)
+			m = a[i];
+	for (i = 0; i < n; i++)
+		if (a[i] == m)
+			z++;
+	printf("%d %d\n", m, z);
+	return 0;
+}
