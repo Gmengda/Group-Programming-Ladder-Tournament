@@ -1,0 +1,29 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+
+int main()
+{
+	int i;
+	int sz;
+	char m[10] = { 0 };
+	scanf("%s", &m);
+	sz = strlen(m);
+	if (sz == 4)
+	{
+		if (m[0] == '0' || m[0] == '1' || m[0] + m[2] <= '2' + '2')
+			printf("20%c%c-%c%c", m[0], m[1], m[2], m[3]);
+		else
+			printf("19%c%c-%c%c", m[0], m[1], m[2], m[3]);
+	}
+	else
+	{
+		for (i = 0; i < sz; i++)
+		{
+			printf("%c", m[i]);
+			if (i == 3)
+				printf("-");
+		}
+	}
+	return 0;
