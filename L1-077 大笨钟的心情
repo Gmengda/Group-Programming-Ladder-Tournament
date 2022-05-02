@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
+
+int main()
+{
+	int i;
+	int a[25] = { 0 };
+	int m;
+	for (i = 0; i < 24; i++)
+	{
+		scanf("%d ", &a[i]);
+	}
+	do
+	{
+		scanf("%d", &m);
+		if (a[m] > 50)
+			printf("%d yes\n", a[m]);
+		else
+			printf("%d no\n", a[m]);
+	} while (m >= 0 && m <= 24);
+	return 0;
+}
