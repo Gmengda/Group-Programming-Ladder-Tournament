@@ -1,0 +1,34 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+int main()
+{
+	int i;
+	int a1, a2;
+	int n, z;
+	int s = 2;
+	int c[1000];
+	scanf("%d %d %d", &a1, &a2, &n);
+	c[0] = a1;
+	c[1] = a2;
+	for (i = 2; i < n; i++)
+	{
+		if ((c[i - 1] * c[i - 2]) < 10)
+		{
+			c[s] = c[i - 1] * c[i - 2];
+			s++;
+		}
+		else
+		{
+			z = c[i - 1] * c[i - 2];
+			c[s + 1] = z % 10;
+			c[s] = z / 10;
+			s += 2;
+		}
+	}
+	for (i = 0; i < n; i++)
+	{
+		printf("%d ", c[i]);
+	}
+	return 0;
+}
