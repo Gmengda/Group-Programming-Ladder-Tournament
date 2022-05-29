@@ -1,0 +1,32 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+int main()
+{
+	int date;
+	scanf("%d", &date);
+	int year = 1777;
+	int a[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+	int i = 3;
+	while (date > a[i + 1])
+	{
+		i++;
+		date -= a[i];
+		if (i == 0)
+		{
+			year += 1;
+			if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)   //判断2月的天数 
+			{
+				a[1] = 29;
+			}
+			else {
+				a[1] = 28;
+			}
+		}
+		if (i == 11)    //12月之后就跳转到1月 
+		{
+			i = -1;
+		}
+	} printf("%d-%d-%d", year, i + 2, date - 1);
+	return 0;
+}
