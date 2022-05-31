@@ -1,0 +1,73 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+int MMM(int s)
+{
+	int m, i, n;
+	int a[4];
+	m = s;
+	if (m % 10 == 0)
+	{
+		return 0;
+	}
+	//将输入的数字转化为数组
+	for (i = 0; i < 4; i++)
+	{
+		a[i] = m % 10;
+		m = m / 10;
+	}
+	//6  9  颠倒
+	for (i = 0; i < 4; i++)
+	{
+		if (a[i] == 6)
+		{
+			a[i] = 9;
+			continue;
+		}
+		if (a[i] == 9)
+		{
+			a[i] = 6;
+			continue;
+		}
+	}
+	//数组转换为数字
+	for (i = 0, n = 0; i < 4; i++)
+	{
+		n += a[i];
+		if (i != 3)
+			n = n * 10;
+	}
+	return n;
+}
+
+int main()
+{
+	int i, s,j = 0,q = 0;
+	int b[10000] = { 0 }, c[10000] = { 0 };
+	int n = 0, z = 0;
+	for (s = 1000; s < 10000; s++)
+	{
+		n = MMM(s);
+		if (n == 0)
+			continue;
+		if (((s - n) < 300) && ((s - n) > 200))
+		{
+			b[j] = s;
+			j++;
+		}
+		if (((n - s) < 900) && ((n - s) > 800))
+		{
+			c[q] = s;
+			q++;
+		}
+	}
+	for (i = 0; i < 10000; i++)
+	{
+		for (q = 0; q < 10000; q++)
+		{
+			if (((c[q] - MMM(c[q])) - (b[i] - MMM(b[i]))) == 558)
+				printf("%d\n", b[i]);
+		}
+	}
+	return 0;
+}
